@@ -4,7 +4,7 @@ import React from 'react';
 import { Counter } from './Counter';
 
 export default {
-	title: 'Example/Button',
+	title: 'Example/Counter',
 	component: Counter,
 	argTypes: {
 		backgroundColor: { control: 'color' },
@@ -29,21 +29,4 @@ export const Primary = Template.bind({});
 Primary.args = {
 	primary: true,
 	label: 10,
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-	label: 20,
-};
-
-export const Large = Template.bind({});
-Large.args = {
-	size: 'large',
-	label: 30,
-};
-
-export const Small = Template.bind({});
-Small.args = {
-	size: 'small',
-	label: 40,
 };
