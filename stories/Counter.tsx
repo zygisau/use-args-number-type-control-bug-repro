@@ -5,14 +5,14 @@ interface CounterProps {
 	primary?: boolean;
 	backgroundColor?: string;
 	size?: 'small' | 'medium' | 'large';
-	label: number;
+	count: number;
 	onClick?: () => void;
 	handleChange: () => void;
 	handleClickUp: () => void;
 	handleClickDown: () => void;
 }
 
-export const Counter = ({ primary = false, size = 'medium', backgroundColor, label, handleChange, handleClickDown, handleClickUp, ...props }: CounterProps) => {
+export const Counter = ({ primary = false, size = 'medium', backgroundColor, count, handleChange, handleClickDown, handleClickUp, ...props }: CounterProps) => {
 	const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
 	return (
 	<div>
@@ -28,7 +28,7 @@ export const Counter = ({ primary = false, size = 'medium', backgroundColor, lab
 			style={{ backgroundColor }}
 			{...props}
 		>
-		{label}
+		{count}
 		</button>
 
 		<button onClick={handleClickUp}>+1</button>

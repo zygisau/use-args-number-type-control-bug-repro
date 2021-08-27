@@ -8,15 +8,15 @@ export default {
 	component: Counter,
 	argTypes: {
 		backgroundColor: { control: 'color' },
-		label: { control: { type: 'number' } },
+		count: { control: { type: 'number' } },
 	},
 } as ComponentMeta<typeof Counter>;
 
 const Template: ComponentStory<typeof Counter> = (args) => {
-	const [{ primary, label }, updateArgs] = useArgs();
+	const [{ primary, count }, updateArgs] = useArgs();
 	const handleChange = () => updateArgs({ primary: !primary });
-	const handleClickUp = () => updateArgs({ label: label + 1 });
-	const handleClickDown = () => updateArgs({ label: label - 1 });
+	const handleClickUp = () => updateArgs({ count: count + 1 });
+	const handleClickDown = () => updateArgs({ count: count - 1 });
 
 	return (
 		<div>
@@ -28,5 +28,5 @@ const Template: ComponentStory<typeof Counter> = (args) => {
 export const Primary = Template.bind({});
 Primary.args = {
 	primary: true,
-	label: 10,
+	count: 10,
 };
